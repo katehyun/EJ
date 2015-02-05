@@ -31,9 +31,9 @@ kmeansAIC = function(fit){
 
 
 # rm(X)
-# X <- DataTotal$Con2005
-# y <- cbind(X, DataTotal$distance)
-# fit <- kmeans(X, 7) 
+X <- DataTotal$Con2005
+# y <- cbind( DataTotal$distance, X)
+# fit <- kmeans(X, 3) 
 # kmeansAIC(fit)
 # fit$tot.withinss
 # fit$centers
@@ -58,13 +58,36 @@ colnames(DataProportion)[29:30] = c("cluster2", "cluster3")
 colnames(DataTotal)[32:33] = c("cluster2", "cluster3")
 
 
-# DataTotal
 
+# DataTotal
 DataTotal_fit2_impact1 <- subset(DataTotal, DataTotal$cluster2==1)
 DataTotal_fit2_impact2 <- subset(DataTotal, DataTotal$cluster2==2)
 DataTotal_fit3_impact1 <- subset(DataTotal, DataTotal$cluster3==1)
 DataTotal_fit3_impact2 <- subset(DataTotal, DataTotal$cluster3==2)
 DataTotal_fit3_impact3 <- subset(DataTotal, DataTotal$cluster3==3)
+
+write.table(DataTotal_fit2_impact1,
+            "C:/Users/Kate Hyun/Dropbox/Kate/EJ/paper research/DataAnalysis_2014_AfterTRB/0128R/EJ/Result2_02042015/DataTotal_fit2_impact1.txt",
+            sep="\t",row.names=FALSE)
+write.table(DataTotal_fit2_impact2,
+            "C:/Users/Kate Hyun/Dropbox/Kate/EJ/paper research/DataAnalysis_2014_AfterTRB/0128R/EJ/Result2_02042015/DataTotal_fit2_impact2.txt",
+            sep="\t",row.names=FALSE)
+write.table(DataTotal_fit3_impact1,
+            "C:/Users/Kate Hyun/Dropbox/Kate/EJ/paper research/DataAnalysis_2014_AfterTRB/0128R/EJ/Result2_02042015/DataTotal_fit3_impact1.txt",
+            sep="\t",row.names=FALSE)
+write.table(DataTotal_fit3_impact2,
+            "C:/Users/Kate Hyun/Dropbox/Kate/EJ/paper research/DataAnalysis_2014_AfterTRB/0128R/EJ/Result2_02042015/DataTotal_fit3_impact2.txt",
+            sep="\t",row.names=FALSE)
+write.table(DataTotal_fit3_impact3,
+            "C:/Users/Kate Hyun/Dropbox/Kate/EJ/paper research/DataAnalysis_2014_AfterTRB/0128R/EJ/Result2_02042015/DataTotal_fit3_impact3.txt",
+            sep="\t",row.names=FALSE)
+
+# # correlation
+# cor_fit2_impact1 <- cor.test( DataTotal_fit2_impact1 $Con2005, DataTotal_fit2_impact1 $distance)
+# cor_fit2_impact2 <- cor.test( DataTotal_fit2_impact2 $Con2005, DataTotal_fit2_impact2 $distance)
+# cor_fit3_impact1 <- cor.test( DataTotal_fit3_impact1 $Con2005, DataTotal_fit3_impact1 $distance)
+# cor_fit3_impact2 <- cor.test( DataTotal_fit3_impact2 $Con2005, DataTotal_fit3_impact2 $distance)
+# cor_fit3_impact3 <- cor.test( DataTotal_fit3_impact3 $Con2005, DataTotal_fit3_impact3 $distance)
 
 
 
@@ -72,7 +95,7 @@ DataTotal_fit3_impact3 <- subset(DataTotal, DataTotal$cluster3==3)
 # DataTotal <- DataTotal_fit2_impact2
 # DataTotal <- DataTotal_fit3_impact1
 # DataTotal <- DataTotal_fit3_impact2
-# DataTotal <- DataTotal_fit3_impact3
+DataTotal <- DataTotal_fit3_impact3
 # DataTotal <- rbind(DataTotal_fit3_impact2, DataTotal_fit3_impact3)
                             
 
@@ -328,11 +351,14 @@ ILATtest[1,10] <- t.test(ConTotal[,23], ConTotal[,24])$p.value
 
 
 
-write.table(ILATotal,"C:/Users/Kate Hyun/Dropbox/Kate/EJ/paper research/DataAnalysis_2014_AfterTRB/0128R/EJ/Result2_02042015/ILATotal_fit2_region2.txt",
+write.table(ILATotal,
+            "C:/Users/Kate Hyun/Dropbox/Kate/EJ/paper research/DataAnalysis_2014_AfterTRB/0128R/EJ/Result2_02042015/Impactbased_ILA/ILATotal_fit3_region3.txt",
             sep="\t",row.names=FALSE)
-write.table(ILARatio,"C:/Users/Kate Hyun/Dropbox/Kate/EJ/paper research/DataAnalysis_2014_AfterTRB/0128R/EJ/Result2_02042015/ILARatio_fit2_region2.txt",
+write.table(ILARatio,
+            "C:/Users/Kate Hyun/Dropbox/Kate/EJ/paper research/DataAnalysis_2014_AfterTRB/0128R/EJ/Result2_02042015/Impactbased_ILA/ILARatio_fit3_region3.txt",
             sep="\t",row.names=FALSE)
-write.table(PopTotal,"C:/Users/Kate Hyun/Dropbox/Kate/EJ/paper research/DataAnalysis_2014_AfterTRB/0128R/EJ/Result2_02042015/PopTotal_fit2_region2.txt",
+write.table(PopTotal,
+            "C:/Users/Kate Hyun/Dropbox/Kate/EJ/paper research/DataAnalysis_2014_AfterTRB/0128R/EJ/Result2_02042015/Impactbased_ILA/PopTotal_fit3_region3.txt",
             sep="\t",row.names=FALSE)
 
 write.table(DataTotal,"C:/Users/Kate Hyun/Dropbox/Kate/EJ/paper research/DataAnalysis_2014_AfterTRB/0128R/EJ/Result2_02042015/DataTotal.txt",

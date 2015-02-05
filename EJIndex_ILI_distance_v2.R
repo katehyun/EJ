@@ -16,19 +16,51 @@ colnames(DataTotal)[length(DataTotal[1,])] <- "distance"
 # DataTotal
 
 DataTotal_distance1 <- subset(DataTotal, DataTotal$distance < 0.25)
+DataTotal_distanceNot1 <- subset(DataTotal, DataTotal$distance >= 0.25)
 DataTotal_distance2 <- subset(DataTotal, DataTotal$distance < 1)
+DataTotal_distanceNot2 <- subset(DataTotal, DataTotal$distance >= 1)
 DataTotal_distance3 <- subset(DataTotal, DataTotal$distance < 2)
+DataTotal_distanceNot3 <- subset(DataTotal, DataTotal$distance >= 2)
 DataTotal_distance4 <- subset(DataTotal, DataTotal$distance < 4)
-DataTotal_distance5 <- subset(DataTotal, DataTotal$cluster3 >= 4)
+DataTotal_distanceNot4 <- subset(DataTotal, DataTotal$distance >= 4)
 
 
+write.table(DataTotal_distance1,
+            "C:/Users/Kate Hyun/Dropbox/Kate/EJ/paper research/DataAnalysis_2014_AfterTRB/0128R/EJ/Result2_02042015/Distancebased_ILA/DataTotal_distance1.txt",
+            sep="\t",row.names=FALSE)
+write.table(DataTotal_distanceNot1,
+            "C:/Users/Kate Hyun/Dropbox/Kate/EJ/paper research/DataAnalysis_2014_AfterTRB/0128R/EJ/Result2_02042015/Distancebased_ILA/DataTotal_distanceNot1.txt",
+            sep="\t",row.names=FALSE)
+write.table(DataTotal_distance2,
+            "C:/Users/Kate Hyun/Dropbox/Kate/EJ/paper research/DataAnalysis_2014_AfterTRB/0128R/EJ/Result2_02042015/Distancebased_ILA/DataTotal_distance2.txt",
+            sep="\t",row.names=FALSE)
+write.table(DataTotal_distanceNot2,
+            "C:/Users/Kate Hyun/Dropbox/Kate/EJ/paper research/DataAnalysis_2014_AfterTRB/0128R/EJ/Result2_02042015/Distancebased_ILA/DataTotal_distanceNot2.txt",
+            sep="\t",row.names=FALSE)
+write.table(DataTotal_distance3,
+            "C:/Users/Kate Hyun/Dropbox/Kate/EJ/paper research/DataAnalysis_2014_AfterTRB/0128R/EJ/Result2_02042015/Distancebased_ILA/DataTotal_distance3.txt",
+            sep="\t",row.names=FALSE)
+write.table(DataTotal_distanceNot3,
+            "C:/Users/Kate Hyun/Dropbox/Kate/EJ/paper research/DataAnalysis_2014_AfterTRB/0128R/EJ/Result2_02042015/Distancebased_ILA/DataTotal_distanceNot3.txt",
+            sep="\t",row.names=FALSE)   
+write.table(DataTotal_distance4,
+            "C:/Users/Kate Hyun/Dropbox/Kate/EJ/paper research/DataAnalysis_2014_AfterTRB/0128R/EJ/Result2_02042015/Distancebased_ILA/DataTotal_distance4.txt",
+            sep="\t",row.names=FALSE)
+write.table(DataTotal_distanceNot4,
+            "C:/Users/Kate Hyun/Dropbox/Kate/EJ/paper research/DataAnalysis_2014_AfterTRB/0128R/EJ/Result2_02042015/Distancebased_ILA/DataTotal_distanceNot4.txt",
+            sep="\t",row.names=FALSE) 
 
-# DataTotal <- DataTotal_fit2_impact1
-# DataTotal <- DataTotal_fit2_impact2
-# DataTotal <- DataTotal_fit3_impact1
-# DataTotal <- DataTotal_fit3_impact2
-# DataTotal <- DataTotal_fit3_impact3
-# DataTotal <- rbind(DataTotal_fit3_impact2, DataTotal_fit3_impact3)
+DataTotal <- data.frame()
+DataTotal <- DataTotal_distance1
+# DataTotal <- DataTotal_distance2
+# DataTotal <- DataTotal_distance3
+# DataTotal <- DataTotal_distance4
+
+# DataTotal <- DataTotal_distanceNot1
+# DataTotal <- DataTotal_distanceNot2
+# DataTotal <- DataTotal_distanceNot3
+# DataTotal <- DataTotal_distanceNot4
+
 
 
 # Con Total
@@ -281,12 +313,12 @@ ILATtest[1,9] <- t.test(ConTotal[,18], ConTotal[,22])$p.value
 ILATtest[1,10] <- t.test(ConTotal[,23], ConTotal[,24])$p.value
 
 
-write.table(ILATotal,"C:/Users/Kate Hyun/Dropbox/Kate/EJ/paper research/DataAnalysis_2014_AfterTRB/0128R/EJ/Result2_02042015/ILATotal_fit2_region2.txt",
+write.table(ILATotal,"C:/Users/Kate Hyun/Dropbox/Kate/EJ/paper research/DataAnalysis_2014_AfterTRB/0128R/EJ/Result2_02042015/Distancebased_ILA/ILATotal_region1.txt",
             sep="\t",row.names=FALSE)
-write.table(ILARatio,"C:/Users/Kate Hyun/Dropbox/Kate/EJ/paper research/DataAnalysis_2014_AfterTRB/0128R/EJ/Result2_02042015/ILARatio_fit2_region2.txt",
+write.table(ILARatio,"C:/Users/Kate Hyun/Dropbox/Kate/EJ/paper research/DataAnalysis_2014_AfterTRB/0128R/EJ/Result2_02042015/Distancebased_ILA/ILARatio_region1.txt",
             sep="\t",row.names=FALSE)
-write.table(PopTotal,"C:/Users/Kate Hyun/Dropbox/Kate/EJ/paper research/DataAnalysis_2014_AfterTRB/0128R/EJ/Result2_02042015/PopTotal_fit2_region2.txt",
+write.table(PopTotal,"C:/Users/Kate Hyun/Dropbox/Kate/EJ/paper research/DataAnalysis_2014_AfterTRB/0128R/EJ/Result2_02042015/Distancebased_ILA/PopTotal_region1.txt",
             sep="\t",row.names=FALSE)
 
-write.table(DataTotal,"C:/Users/Kate Hyun/Dropbox/Kate/EJ/paper research/DataAnalysis_2014_AfterTRB/0128R/EJ/Result2_02042015/DataTotal.txt",
-            sep="\t",row.names=FALSE)
+# write.table(DataTotal,"C:/Users/Kate Hyun/Dropbox/Kate/EJ/paper research/DataAnalysis_2014_AfterTRB/0128R/EJ/Result2_02042015/Distancebased_ILA/DataTotal.txt",
+#             sep="\t",row.names=FALSE)
